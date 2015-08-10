@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <!-- link rel="apple-touch-icon" sizes="57x57" href="src/images/apple-touch-icon.png" /-->
+    <!-- link rel="apple-touch-icon" sizes="72x72" href="src/images/apple-touch-icon-72x72.png" /-->
+    <!-- link rel="apple-touch-icon" sizes="114x114" href="src/images/apple-touch-icon-114x114.png" /-->
+
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>index</title>
+    <link href="stylesheets/init.css" type="text/css" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+        <link href="stylesheets/ie.css" type="text/css" rel="stylesheet" />
+        <script src="js/html5.js"></script>
+    <![endif]-->
+
+
+    <!--<script src="js/init.js"></script>-->
+
+</head>
+<body>
+
+    <!--    .BEGIN Header    -->
+
+
+    <header class="app-header">
+        <div class="app-head">
+            <div class="container">
+                <div class="loginbar">
+                    <div class="favorite"></a>
+                    <a href="#" class="item">Вход</a>
+
+                    <div class="">Меню</div>
+
+
+                </div>
+                <nav class="nav-head">
+                    <a class="item" href="#">RIA.com</a>
+                    <a class="item active" href="#">Автомобили</a>
+                    <a class="item" href="#">Недвижимость</a>
+                    <a class="item" href="#">Автомагазин</a>
+                    <a class="item" href="#">Авиаперелеты</a>
+                    <a class="item" href="#">Автозапчасти</a>
+                </nav>
+            </div>
+        </div>
+        <div class="container-header">
+            <a href="#" class="logo">
+                <img src="images/autoria.png" />
+            </a>
+            <div class="areabar">
+                <a href="#" class="button-add">Добавить объявление</a>
+                <em class="tip">текст - подсказка</em>
+            </div>
+            <div class="wrapper">
+                <a href="#" class="elem-tab active">Автомобили б/у</a>
+                <a href="#" class="elem-tab">Новые авто</a>
+                <a href="#" class="elem-tab">Новости</a>
+            </div>
+        </div>
+    </header>
+
+    <!--    .END Header    -->
+
+    <!--    .BEGIN Container Layout    -->
+    <div class="app-content">
+
+        <section class="row">
+            <div class="search__main span8">
+                <div class="wrapper-panel">
+
+                    <div class="flex-textsearch">
+                        <input class="input-text e-form" type="text" placeholder="Я ищу" />
+                    </div>
+                    <p class="nav-search__main">
+                        <input id="demoid_by_cars" type="radio" name="type" checked />
+                        <label for="demoid_by_cars">Б/у авто</label>
+                        <input id="demoid_new_cars" type="radio" name="type" />
+                        <label for="demoid_new_cars">Новое авто</label>
+                    </p>
+
+                    <div class="form-search__main">
+                        <div class="primary-column">
+                            <div class="m-rows">
+                                <label class="m-label">Транспорт:</label>
+                                <div class="m-indent">
+
+                                    <div class="e-form pseudoselect">
+                                        <div class="selected">
+                                            Item
+                                        </div>
+                                        <div class="options" style="display: none;">
+                                            <label class="item"><input type="checkbox"> Item 1</label>
+                                            <label class="item"><input type="checkbox"> Item 2</label>
+                                            <label class="item"><input type="checkbox"> Item 3</label>
+                                            <label class="item"><input type="checkbox"> Item 4</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="m-rows">
+                                <label class="m-label">Марка:</label>
+                                <div class="m-indent">
+                                    <select class="e-form">
+                                        <option>Item</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="m-rows">
+                                <label class="m-label">Модель:</label>
+                                <div class="m-indent">
+                                    <select class="e-form">
+                                        <option>Item</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="secondary-column">
+                            <div class="m-rows">
+                                <label class="m-label">Год от:</label>
+                                <div class="m-indent">
+                                    <select class="e-form year">
+                                        <option>Item</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="m-rows">
+                                <label class="m-label">Цена до:</label>
+                                <div class="m-indent">
+                                    <div class="flex-group-form">
+                                        <div class="middle">
+                                            <input class="e-form" type="text" />
+                                        </div>
+                                        <div class="middle">
+                                            <select class="e-form">
+                                                <option>грн.</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="ext-end">Расширенный поиск</a>
+                    <button class="button-primary">Поиск</button>
+                </div>
+            </div>
+            <div class="bn-place span4">
+                <img src="images/demo/banner-300x250.jpg" width="300" height="251" />
+            </div>
+        </section>
+
+
+
+        <section class="box-panel">
+            <div class="head">
+
+                <span class="title">ТОП объявления:</span>
+                <nav class="nav-pills">
+                    <a class="pills active" href="#">Все</a>
+                    <a class="pills" href="#">Новые авто</a>
+                    <a class="pills" href="#">Авто б\у</a>
+                    <a href="#" class="item">За час <span class="tip">+ 577</span></a>
+                    <a href="#" class="item">За день <span class="tip">+ 4 503</span></a>
+                </nav>
+            </div>
+            <div class="showcase-main-offer">
+
+                <div class="showcase-main-top">
+                    <div class="item-showcase-offer">
+                        <a href="#" class="photo">
+                            <img src="images/demo/photo-top.jpg" width="325" height="250">
+                            <span class="title">Jaguar XK Cabrio 2006</span>
+                        </a>
+                        <ul class="description">
+                            <li class="e-desc">
+                                <span class="base-price">
+                                    $<span class="price">25 500</span>
+                                </span>
+                                /
+                                <span class="price">330 199</span> грн
+                                &nbsp;
+                                2003 / 240 тыс.км
+                            </li>
+                            <li class="e-desc">Срочно! Торг, обмен. Идеальное состояние</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="showcase-main-more">
+                    <div class="item-showcase-offer">
+                        <a href="#" class="photo">
+                            <img src="http://cdn.img.ria.com/photos/auto/new_auto_storage/23/2397/239769/239769m.jpg" />
+                            <span class="title">
+                                Hyundai Grand Santa Fe <em class="desc">2013 / 12 тыс.км</em>
+                            </span>
+                        </a>
+                        <ul class="description">
+                            <li class="e-desc">
+                                <span class="base-price">
+                                    $<span class="price">54 000</span>
+                                </span>
+                                / <span class="price">733 000</span> грн
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-showcase-offer">
+                        <a href="#" class="photo">
+                            <img src="http://cdn.img.ria.com/photosnew/auto/photo/mercedes-benz_s-500__107403821m.jpg" />
+                            <span class="title">
+                                Mercedes-Benz S 500 <em class="desc">2015 / 7 тыс.км</em>
+                            </span>
+                        </a>
+                        <ul class="description">
+                            <li class="e-desc">
+                                <span class="base-price">
+                                    $<span class="price">152 022</span>
+                                </span>
+                                / <span class="price">1 968 548</span> грн
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-showcase-offer">
+                        <a href="#" class="photo">
+                            <img src="http://cdn.img.ria.com/photosnew/auto/photo/land-rover_range-rover__109500855m.jpg" />
+                            <span class="title">
+                                Land Rover <em class="desc">2013 / 12 тыс.км</em>
+                            </span>
+                        </a>
+                        <ul class="description">
+                            <li class="e-desc">
+                                <span class="base-price">
+                                    $<span class="price">145 000</span>
+                                </span>
+                                / <span class="price">1 877 605</span> грн
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-showcase-offer">
+                        <a href="#" class="photo">
+                            <img src="http://cdn.img.ria.com/photosnew/auto/photo/hyundai_santa-fe__83267546m.jpg" />
+                            <span class="title">
+                                Hyundai Santa FE <em class="desc">2013 / 12 тыс.км</em>
+                            </span>
+                        </a>
+                        <ul class="description">
+                            <li class="e-desc">
+                                <span class="base-price">
+                                    $<span class="price">47 257</span>
+                                </span>
+                                / <span class="price">611 900</span> грн
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-showcase-offer">
+                        <a href="#" class="photo">
+                            <img src="http://cdn.img.ria.com/photosnew/auto/photo/lexus_gs__114541949m.jpg" />
+                            <span class="title">
+                                Lexus GS euro <em class="desc">2009 / 72 тыс.км</em>
+                            </span>
+                        </a>
+                        <ul class="description">
+                            <li class="e-desc">
+                                <span class="base-price">
+                                    $<span class="price">28 000</span>
+                                </span>
+                                / <span class="price">362 572</span> грн
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-showcase-offer">
+                        <a href="#" class="photo">
+                            <img src="http://cdn.img.ria.com/photosnew/auto/photo/mitsubishi_asx__111596251m.jpg" />
+                            <span class="title">
+                                Mitsubishi ASX <em class="desc">2012 / 72 тыс.км</em>
+                            </span>
+                        </a>
+                        <ul class="description">
+                            <li class="e-desc">
+                                <span class="base-price">
+                                    $<span class="price">22 500</span>
+                                </span>
+                                / <span class="price">291 352</span> грн
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="bnplace-flex-demo">
+            Каждую <b class="time">1</b> минуту продается авто
+        </section>
+
+
+        <section class="box-panel">
+            <div class="title">
+                Виды транспорта:
+            </div>
+
+            <div class="transport__type">
+                <div class="item-tt active">
+                    <i class="i-tt-cars"></i>
+                    <span class="title">Легковые</span>
+                </div>
+                <div class="item-tt">
+                    <i class="i-tt-moto"></i>
+                    <span class="title">Мото</span>
+                </div>
+                <div class="item-tt">
+                    <i class="i-tt-spectex"></i>
+                    <span class="title">Спецтехника</span>
+                </div>
+                <div class="item-tt">
+                    <i class="i-tt-trucks"></i>
+                    <span class="title">Грузовики</span>
+                </div>
+                <div class="item-tt">
+                    <i class="i-tt-trailers"></i>
+                    <span class="title">Прицепы</span>
+                </div>
+                <div class="item-tt">
+                    <i class="i-tt-autobus"></i>
+                    <span class="title">Автобусы</span>
+                </div>
+                <div class="item-tt">
+                    <i class="i-tt-autohome"></i>
+                    <span class="title">Автодома</span>
+                </div>
+                <div class="item-tt">
+                    <i class="i-tt-water"></i>
+                    <span class="title">Водный</span>
+                </div>
+            </div>
+            <div class="nav-transport__type">
+                <span class="title">Марки легковых автомобилей:</span>
+                <nav class="nav-pills">
+                    <a class="pills active" href="#">Все</a>
+                    <a class="pills" href="#">Популярные</a>
+                    <a class="pills" href="#">Японские</a>
+                    <a class="pills" href="#">Немецкий</a>
+                </nav>
+            </div>
+            <div class="catalog-referrals">
+                <a class="elem" href="#">Alfa Romeo</a>
+                <a class="elem" href="#">Audi</a>
+                <a class="elem" href="#">BMW</a>
+                <a class="elem" href="#">Chevrolet</a>
+                <a class="elem" href="#">Chrysler</a>
+                <a class="elem" href="#">Citroen</a>
+                <a class="elem" href="#">Hyundai</a>
+                <a class="elem" href="#">Jeep</a>
+                <a class="elem" href="#">Kia</a>
+                <a class="elem" href="#">Land Rover</a>
+                <a class="elem" href="#">Lexus</a>
+                <a class="elem" href="#">Mazda</a>
+                <a class="elem" href="#">Porsche</a>
+                <a class="elem" href="#">Renault</a>
+                <a class="elem" href="#">Seat</a>
+                <a class="elem" href="#">Skoda</a>
+                <a class="elem" href="#">Smart</a>
+                <a class="elem" href="#">SsangYong</a>
+                <a class="elem" href="#">ВАЗ</a>
+                <a class="elem" href="#">ЗАЗ</a>
+                <a class="elem" href="#">ГАЗ</a>
+                <a class="elem" href="#">ИЖ</a>
+                <a class="elem" href="#">УАЗ</a>
+                <a class="elem" href="#">Москвич</a>
+                <a class="elem" href="#">Great Wall</a>
+                <a class="elem" href="#">Infiniti</a>
+                <a class="elem" href="#">ЮМЗ</a>
+                <a class="elem" href="#">МАЗ</a>
+                <a class="elem" href="#">ЗИЛ</a>
+                <a class="elem" href="#">Днепр (КМЗ)</a>
+                <a class="elem" href="#">Geely</a>
+                <a class="elem" href="#">Богдан</a>
+                <a class="elem" href="#">ЛуАЗ</a>
+                <a class="elem" href="#">Scania</a>
+                <a class="elem" href="#">БАЗ</a>
+                <a class="show-more" href="#">Смотреть все</a>
+            </div>
+        </section>
+
+
+
+        <section class="box-panel">
+            <div class="title">
+                У нас также ищут:
+            </div>
+            <div class="other-features">
+
+                <div class="box-features">
+                    <img class="image" src="images/demo/item.jpg" width="120" />
+                    <dl class="wrapper">
+                        <dt class="title"><a href="#">Автосалоны</a> <span class="tip">450 со всей Украины</span></dt>
+                        <dd class="item"><a href="#"><b class="count">60 000</b> новых автомобилей</a></dd>
+                        <dd class="item"><a href="#"><b class="count">450</b> Салонов в Каталоге</a></dd>
+                    </dl>
+                </div>
+                <div class="box-features">
+                    <img class="image" src="images/demo/item.jpg" width="120" />
+                    <dl class="wrapper">
+                        <dt class="title"><a href="#">Автодилеры</a></dt>
+                        <dd class="item"><b class="count">267</b> официальных дилеров</dd>
+                        <dd class="item"><b class="count">16 457</b> новых авто по акционной цене</dd>
+                    </dl>
+                </div>
+                <div class="box-features">
+                    <img class="image" src="images/demo/item.jpg" width="120" />
+                    <dl class="wrapper">
+                        <dt class="title"><a href="#">Мотосалоны</a></dt>
+                        <dd class="item"><a href="#"><b class="count">5 500</b> новой мототехники</a></dd>
+                        <dd class="item"><a href="#"><b class="count">35</b> Мотосалонов в Каталоге</a></dd>
+                    </dl>
+                </div>
+                <div class="box-features">
+                    <img class="image" src="images/demo/item.jpg" width="120" />
+                    <dl class="wrapper">
+                        <dt class="title"><a href="#">Банки</a></dt>
+                        <dd class="item"><a href="#"><b class="count">127</b> официальных дилеров</a></dd>
+                        <dd class="item"><a href="#"><b class="count">16 457</b> новых авто</a> по акционной цене</dd>
+                    </dl>
+                </div>
+                <div class="box-features">
+                    <img class="image" src="images/demo/item.jpg" width="120" />
+                    <dl class="wrapper">
+                        <dt class="title"><a href="#">Заказ Авто</a></dt>
+                        <dd class="item"><a href="#"><b class="count">127</b> официальных дилеров</a></dd>
+                        <dd class="item"><a href="#"><b class="count">16 457</b> новых авто</a> по акционной цене</dd>
+                    </dl>
+                </div>
+                <div class="box-features">
+                    <img class="image" src="images/demo/item.jpg" width="120" />
+                    <dl class="wrapper">
+                        <dt class="title"><a href="#">Обучение вождению</a></dt>
+                        <dd class="item"><a href="#"><b class="count">700</b> Автошколы</a></dd>
+                        <dd class="item"><a href="#"><b class="count">35</b> ПДД онлайн</a></dd>
+                    </dl>
+                </div>
+                <div class="box-features">
+                    <img class="image" src="images/demo/item.jpg" width="120" />
+                    <dl class="wrapper">
+                        <dt class="title"><a href="#">Авторазборка</a></dt>
+                        <dd class="item"><a href="#"><b class="count">1 227</b> Авторазборки в Каталоге</a></dd>
+                        <dd class="item">Найти запчасть через <a href="#">Стол заказов</a></dd>
+                    </dl>
+                </div>
+                <div class="box-features">
+                    <img class="image" src="images/demo/item.jpg" width="120" />
+                    <dl class="wrapper">
+                        <dt class="title"><a href="#">Автосервисы</a></dt>
+                        <dd class="item"><a href="#"><b class="count">705</b> Автосервисов в Каталоге</a></dd>
+                        <dd class="item"><a href="#"><b class="count">510</b> СТО</a></dd>
+                    </dl>
+                </div>
+                <div class="box-features">
+                    <img class="image" src="images/demo/item.jpg" width="120" />
+                    <dl class="wrapper">
+                        <dt class="title"><a href="#">MARKET</a> <span class="tip">- магазин автотоваров</span></dt>
+                        <dd class="item"><a href="#">Шины / Диски</a></dd>
+                        <dd class="item"><a href="#">Подборщик дисков</a></dd>
+                    </dl>
+                </div>
+                <div class="box-features">
+                    <img class="image" src="images/demo/item.jpg" width="120" />
+                    <dl class="wrapper">
+                        <dt class="title"><a href="#">Запчасти</a></dt>
+                        <dd class="item"><a href="#"><b class="count">000</b> Авторазборки</a></dd>
+                        <dd class="item"><a href="#"><b class="count">510</b> СТО</a></dd>
+                    </dl>
+                </div>
+                <div class="box-features">
+                    <img class="image" src="images/demo/item.jpg" width="120" />
+                    <dl class="wrapper">
+                        <dt class="title"><a href="#">Рейтинг авто</a></dt>
+                        <dd class="item"><a href="#"><b class="count">000</b> Авторазборки</a></dd>
+                        <dd class="item"><a href="#"><b class="count">510</b> СТО</a></dd>
+                    </dl>
+                </div>
+                <div class="box-features">
+                    <img class="image" src="images/demo/item.jpg" width="120" />
+                    <dl class="wrapper">
+                        <dt class="title"><a href="#">Другие сервисы</a></dt>
+                        <dd class="item"><a href="#"><b class="count">10</b> компаний по Автовыкупу</a></dd>
+                        <dd class="item"><a href="#"><b class="count">5</b> Автоломбардов</a></dd>
+                    </dl>
+                </div>
+
+
+            </div>
+        </section>
+
+
+
+        <section class="box-panel">
+
+            <div class="head">
+                <span class="title">
+                    Рубрики:
+                </span>
+                <nav class="nav-tab">
+                    <a class="pills active" href="#">События</a>
+                    <a class="pills" href="#">Автомобили</a>
+                    <a class="pills" href="#">Все о BMW</a>
+                    <a class="pills" href="#">Пекин 2014</a>
+                </nav>
+                <a href="#" class="area">Отзывы  об авто</a>
+            </div>
+            <div class="catalog-top-news row">
+
+                <div class="span7">
+                    <div class="title">Обсуждаемые автоновости</div>
+                    <div class="main-top-news">
+                        <div style="width: 100%; height: 150px; overflow: hidden; margin: 0 0 10px;">
+                            <img style="display: block; width: 100%;" src="http://cdn.img.ria.com/photos/ria/news_text/6/627/62793/62793.jpg" />
+                        </div>
+                        <div class="main-news">
+                            <a href="#" class="title">Солист Jamiroquai нагрянул в Гудвуд на своем красном Ferrari LaFerrari</a>
+                            <i class="tip">|</i>
+                            <a href="#" class="tinycomment">15</a>
+                            <span class="time-add">2 часа назад</span>
+                        </div>
+                    </div>
+                    <div class="main-news">
+                        <a href="#" class="title">«Заряженный» Range Rover Sport освоил трассу в Сильверстоуне</a>
+                        <i class="tip">|</i>
+                        <a href="#" class="tinycomment">2</a>
+                        <span class="time-add">8 часов назад</span>
+                        <p class="desc">Volkswagen Tiguan следующей генерации ожидается только в 2016 года</p>
+                    </div>
+                    <div class="main-news">
+                        <a href="#" class="title">Компания Opel намекнула на загадочную новинку</a>
+                        <span class="time-add">1 день назад</span>
+                        <p class="desc">Компания Opel опубликовала тизер новой машины, которую представят в сентябре.</p>
+                    </div>
+                    <div class="main-news">
+                        <a href="#" class="title">Новый Hyundai i20 преобразится в купе</a>
+                        <span class="time-add">1 неделю назад</span>
+                        <p class="desc">В новом семействе Hyundai i20 появится 3-дверная версия.</p>
+                    </div>
+                    <div class="main-news">
+                        <a href="#" class="title">Седан Mercedes-Benz CLA перешагнул отметку в 100 тыс.</a>
+                        <span class="time-add">1 неделю назад</span>
+                        <p class="desc">Компания продала более 100 000 экземпляров Mercedes-Benz CLA.</p>
+                    </div>
+                    <a class="show-more" href="#">Смотреть все</a>
+                </div>
+
+                <div class="list-testdrive span5">
+                    <div class="title">Тест-драйвы</div>
+
+                    <div class="main-news-testdrive">
+                        <a href="#" class="photo" title="Тест-драйв: Skoda Octavia">
+                            <img src="http://cdn.img.ria.com/photos/ria/news_common/21/2162/216241/216241m.jpg">
+                        </a>
+                        <dl class="wrap">
+                            <dt class="topic">Тест-драйв</dt>
+                            <dd class="name">
+                                <strong>Honda CR-V</strong><br />
+                                Facelift B-Roll
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="main-news-testdrive">
+                        <a href="#" class="photo" title="Тест-драйв: Skoda Octavia">
+                            <img src="http://cdn.img.ria.com/photos/ria/news_common/21/2165/216523/216523m.jpg">
+                        </a>
+                        <dl class="wrap">
+                            <dt class="topic">Тест-драйв</dt>
+                            <dd class="name">
+                                <strong>Citroen C4</strong><br />
+                                Picasso
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="main-news-testdrive">
+                        <a href="#" class="photo" title="Тест-драйв: Skoda Octavia">
+                            <img src="http://cdn.img.ria.com/photos/ria/news_common/21/2164/216417/216417m.jpg">
+                        </a>
+                        <dl class="wrap">
+                            <dt class="topic">Тест-драйв</dt>
+                            <dd class="name">
+                                <strong>Fiat 500</strong>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="main-news-testdrive">
+                        <a href="#" class="photo" title="Тест-драйв: Skoda Octavia">
+                            <img src="http://cdn.img.ria.com/photos/ria/news_common/21/2164/216414/216414m.jpg">
+                        </a>
+                        <dl class="wrap">
+                            <dt class="topic">Тест-драйв</dt>
+                            <dd class="name">
+                                <strong>Skoda Rapid</strong> 2013
+                            </dd>
+                        </dl>
+                    </div>
+                    <a class="show-more" href="#">Смотреть все</a>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="box-panel">
+            <div class="title">
+                Клуб AUTO.RIA
+            </div>
+            <div class="row panel-social-referral">
+                <div class="span3">
+                    <button type="button" class="button-social-link button-twitter">
+                        <span class="place-ico">
+                            <i class="icon-twitter"></i>
+                        </span>
+                        <span class="count">2 859</span>
+                    </button>
+                    <img src="images/demo/informer-soc-bar-1.jpg" width="201" height="70" >
+                    <a class="show-more" href="#">еще телефоны</a>
+                </div>
+                <div class="span3">
+                    <button type="button" class="button-social-link button-facebook">
+                        <span class="place-ico">
+                            <i class="icon-facebook"></i>
+                        </span>
+                        <span class="count">2 859</span>
+                    </button>
+                    <img src="images/demo/informer-soc-bar-2.jpg" width="190" height="70" >
+                    <a class="show-more" href="#">еще телефоны</a>
+                </div>
+                <div class="span3">
+                    <button type="button" class="button-social-link button-ok">
+                        <span class="place-ico">
+                            <i class="icon-ok"></i>
+                        </span>
+                        <span class="count">2 859</span>
+                    </button>
+                    <img src="images/demo/informer-soc-bar-3.jpg" width="215" height="70">
+                    <a class="show-more" href="#">еще телефоны</a>
+                </div>
+                <div class="span3">
+                    <button type="button" class="button-social-link button-vk">
+                        <span class="place-ico">
+                            <i class="icon-vk"></i>
+                        </span>
+                        <span class="count">2 859</span>
+                    </button>
+                    <img src="images/demo/informer-soc-bar-4.jpg" width="212" height="70">
+                    <a class="show-more" href="#">еще телефоны</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span7">
+                    <img src="images/demo/banner-540x175.jpg" width="540" height="175" >
+                    <div>
+                        <a class="show-more" href="#">Смотреть все выпуски</a>
+                    </div>
+                </div>
+                <div class="span5">
+                    <img src="images/demo/banner-380x175.jpg" width="380" height="175" >
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="box-panel">
+            <div class="head">
+                <span class="title">
+                    Товары от <a href="#">MARKET.RIA.com</a>
+                </span>
+            </div>
+
+
+
+
+
+
+        </section>
+
+
+
+        <section class="box-panel">
+            <div class="head">
+                <span class="title">
+                    Каталог автомобилей:
+                </span>
+                <nav class="nav-pills">
+                    <a class="pills active" href="#">по типу</a>
+                    <a class="pills" href="#">по региону</a>
+                    <a class="pills" href="#">по маркам</a>
+                </nav>
+            </div>
+            <div class="seo-catalog-main">
+                <div class="seo-catalog-primary">
+                    <div class="item">
+                        <div class="elem">
+                            <a href="#">Смотреть все марки</a>
+                        </div>
+                        <em class="count">315 366</em>
+                    </div>
+                    <div class="item">
+                        <div class="elem">
+                            <a href="#">Смотреть все года</a>
+                        </div>
+                        <em class="count">315 366</em>
+                    </div>
+                    <div class="item">
+                        <div class="elem">
+                            <a href="#">Каталог легковых</a>
+                        </div>
+                        <em class="count">280 633</em>
+                    </div>
+                    <div class="item">
+                        <div class="elem">
+                            <a href="#">Каталог мото</a>
+                        </div>
+                        <em class="count">43 117</em>
+                    </div>
+                    <div class="item">
+                        <div class="elem">
+                            <a href="#">Каталог водного</a>
+                        </div>
+                        <em class="count">35 461</em>
+                    </div>
+                    <div class="item">
+                        <div class="elem">
+                            <a href="#">Каталог спецтехники</a>
+                        </div>
+                        <em class="count">195 044</em>
+                    </div>
+                    <div class="item">
+                        <div class="elem">
+                            <a href="#">Каталог автобусов</a>
+                        </div>
+                        <em class="count">185 529</em>
+                    </div>
+                    <div class="item">
+                        <div class="elem">
+                            <a href="#">Каталог грузовиков</a>
+                        </div>
+                        <em class="count">233 714</em>
+                    </div>
+                    <div class="item">
+                        <div class="elem">
+                            <a href="#">Каталог прицепов</a>
+                        </div>
+                        <em class="count">35 034</em>
+                    </div>
+                    <div class="item">
+                        <div class="elem">
+                            <a href="#">Каталог автодомов</a>
+                        </div>
+                        <em class="count">58 392</em>
+                    </div>
+                    <div class="item">
+                        <div class="elem">
+                            <a href="#">Каталог воздушного</a>
+                        </div>
+                        <em class="count">7 395</em>
+                    </div>
+                </div>
+                <div class="wrap-catalog-group">
+                    <ol class="seo-catalog-s">
+                        <li class="item">
+                            <a class="elem" href="#">ВАЗ</a>
+                            <em class="count">37 070</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Mercedes-Benz</a>
+                            <em class="count">25 759</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Volkswagen</a>
+                            <em class="count">23 313</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Opel</a>
+                            <em class="count">15 166</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Renault</a>
+                            <em class="count">13 798</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Ford</a>
+                            <em class="count">12 351</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">BMW</a>
+                            <em class="count">10 056</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Daewoo</a>
+                            <em class="count">8 913</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Audi</a>
+                            <em class="count">8 174</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">ГАЗ</a>
+                            <em class="count">8 171</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Toyota</a>
+                            <em class="count">8 166</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Mitsubishi</a>
+                            <em class="count">7 689</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Honda</a>
+                            <em class="count">7 343</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Hyundai</a>
+                            <em class="count">6 962</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Fiat</a>
+                            <em class="count">6 746</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Nissan</a>
+                            <em class="count">6 656</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Chevrolet</a>
+                            <em class="count">6 402</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Peugeot</a>
+                            <em class="count">6 158</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Mazda</a>
+                            <em class="count">5 750</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Skoda</a>
+                            <em class="count">5 656</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">ЗАЗ</a>
+                            <em class="count">5 078</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Citroen</a>
+                            <em class="count">3 936</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Kia</a>
+                            <em class="count">3 766</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Suzuki</a>
+                            <em class="count">2 816</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">MAN</a>
+                            <em class="count">2 341</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Chery</a>
+                            <em class="count">2 341</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Subaru</a>
+                            <em class="count">2 317</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Yamaha</a>
+                            <em class="count">2 286</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Volvo</a>
+                            <em class="count">2 123</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Lexus</a>
+                            <em class="count">2 059</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">ЗИЛ</a>
+                            <em class="count">1 988</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Iveco</a>
+                            <em class="count">1 809</em>
+                        </li>
+                        <li class="item">
+                            <a class="elem" href="#">Daf</a>
+                            <em class="count">1 805</em>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="about-us">
+            AUTO.RIA — наиболее крупный авто базар Украины среди всех отечественных сайтов подобного рода. В намерении помочь как покупателям
+            транспортных средств, так и желающим их продать, мы разработали удобный и масштабный ресурс, представленный в виде доски онлайн-объявлений.
+        </div>
+
+
+    </div>
+    <!--    .END Container Layout    -->
+
+    <!--    .BEGIN Footer    -->
+    <footer class="app-footer">
+        <div class="container">
+            <div class="support-app-footer">
+                <div class="title-panel">
+                    Отдел заботы о пользователях
+                    <i class="logo-ria-mini"></i>
+                    <!--<img src="images/common/logo-ria-mini.png" width="41" height="26">-->
+                </div>
+                <div class="wrapper">
+
+                    <img class="photo" src="images/common/photo/Nadia_Oleynik.jpg" width="67" height="97" alt="Олейник Надежда консyльтант по вопросам работы сайта AUTO.RIA.com">
+
+                    <div class="data">
+                        <div class="title">Олейник Надежда</div>
+                        консyльтант по вопросам работы
+                        сайта AUTO.RIA.com
+                        <p class="phone">(067) 432 82 29</p>
+                        <a class="show-more" href="#">еще телефоны</a>
+                    </div>
+                    <button class="button-primary">
+                        Кнопка
+                    </button>
+                </div>
+            </div>
+            <div class="signature-app-footer">
+                <div class="nav-app-footer">
+                    <div class="head-bar">
+                        <div class="title-com">Компания</div>
+                        <div class="title-par">
+                            Партнерам
+                            <div class="social-btn">
+                                <a href="#" class="icon-btn-twitter" title=""></a>
+                                <a href="#" class="icon-btn-facebook" title=""></a>
+                                <a href="#" class="icon-btn-pinterest" title=""></a>
+                                <a href="#" class="icon-btn-ok" title=""></a>
+                                <a href="#" class="icon-btn-vk" title=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-bar">
+                        <ul class="list">
+                            <li class="item"><a href="#" title="Вакансии на проекте AUTO.RIA">Вакансии</a> на проекте AUTO.RIA</li>
+                            <li class="item"><a href="#" title="Реклама на сайте AUTO.RIA">Реклама на сайте</a> AUTO.RIA</li>
+                            <li class="item"><a href="#" title="Помощь по сайту AUTO.RIA">Помощь по сайту</a> AUTO.RIA</li>
+                            <li class="item"><a href="#" title="Карта сайта AUTO.RIA">Карта сайта</a> AUTO.RIA</li>
+                            <li class="item"><a href="#" title="Погода">Погода</a></li>
+                        </ul>
+                        <ul class="list">
+                            <li class="item"><a href="#" title="Безопасные сделки с AUTO.RIA">Безопасные сделки</a> с AUTO.RIA</li>
+                            <li class="item"><a href="#" title="Политика конфиденциальности | возврата средств на AUTO.RIA">Политика конфиденциальности | возврата средств</a> на AUTO.RIA</li>
+                            <li class="item"><a href="#" title="Партнерские программы">Партнерские программы</a> AUTO.RIA</li>
+                            <li class="item"><a href="#" title="Prom.u">Prom.ua</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="copyright">
+
+                    <i class="logo-ria-small"></i>
+                    &copy; 2004-2014 RIA.com. Все права защищены
+
+                    <a href="#" class="btn-apple-store" title=""></a>
+                    <a href="#" class="btn-google-play" title=""></a>
+
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!--    .END Header    -->
+
+</body>
+</html>
+

@@ -1,0 +1,22 @@
+{
+  "name": "Flex",
+  "version": "0.0.1",
+  "description": "FlexDI",
+  "main": "main",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "app/scripts/vendors",
+    "bower_components"
+  ],
+  "authors": [
+    "Vitaliy Lazarenko"
+  ],
+  "dependencies": {
+    "angular": "latest",
+    "jquery": "latest"
+  },
+  "resolutions": {
+    "angular": "latest"
+  }
+}
