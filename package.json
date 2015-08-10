@@ -11,6 +11,8 @@
     "gulp-compass": "^2.1.0",
     "gulp-install": "latest",
     "gulp-jshint": "^1.11.2",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-util": "^3.0.6",
     "jshint-stylish": "^2.0.1"
   },
   "scripts": {

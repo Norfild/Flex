@@ -14,7 +14,7 @@ var config = {
     buildFolder:         'build',
 
     src: {
-        styles:         './app/stylesheets/**/*.scss',
+        styles:         './app/stylesheets/*.sass',
         scripts:        ['./app/scripts/**/*.js'],
         resourcesToMove: [
             './app/images/**/*.*',
@@ -27,17 +27,22 @@ var config = {
     }
 };
 
-
-gulp.task('default', ['watch'], function() {
-    return gutil.log('Gulp is running!')
+gulp.task('default', function() {
+    return gutil.log('compass watch');
+    gulp.start('compass');
+    return gutil.log('Gulp is running!');
+    gulp.start('watch');
 });
+
+//gulp.task('default', ['compass', 'watch']);
 
 gulp.task('compass', function() {
     gulp.src(config.src.styles)
         .pipe(compass({
-            config_file: './config.rb',
-            css: 'stylesheets',
-            sass: 'sass'
+            style: 'compressed',
+            css: 'app/css',
+            sass: 'app/stylesheets',
+            image: 'app/assets/images'
         }))
         .on('error', function(error) {
             // Would like to catch the error here
@@ -45,7 +50,7 @@ gulp.task('compass', function() {
             this.emit('end');
         })
         .pipe(minifyCSS())
-        .pipe(gulp.dest('app/temp'));
+        .pipe(gulp.dest('build/css'));
 });
 
 // configure the jshint task
@@ -60,3 +65,7 @@ gulp.task('watch', function() {
     gulp.watch(config.src.scripts, ['jshint']);
     gulp.watch(config.src.styles, ['compass']);
 });
+
+
+gulp.watch(config.src.scripts, ['jshint']);
+gulp.watch(config.src.styles, ['compass']);
