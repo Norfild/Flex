@@ -22,5 +22,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Norfild/Flex.git"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "gulp-haml": "^0.1.5"
   }
 }

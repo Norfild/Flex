@@ -1,6 +1,7 @@
 var gulp  = require('gulp'),
     gutil = require('gulp-util'),
     jshint = require('gulp-jshint'),
+    haml = require('gulp-haml'),
     compass = require('gulp-compass'),
     minifyCSS = require('gulp-minify-css');
 
@@ -27,15 +28,6 @@ var config = {
     }
 };
 
-gulp.task('default', function() {
-    return gutil.log('compass watch');
-    gulp.start('compass');
-    return gutil.log('Gulp is running!');
-    gulp.start('watch');
-});
-
-//gulp.task('default', ['compass', 'watch']);
-
 gulp.task('compass', function() {
     gulp.src(config.src.styles)
         .pipe(compass({
@@ -60,12 +52,27 @@ gulp.task('jshint', function() {
         .pipe(jshint.reporter('jshint-stylish'));
 });
 
+
+//Gulp task build
+gulp.task('indexHaml', function() {
+    gulp.src('./app/templates/index.haml')
+        .pipe(haml())
+        .pipe(gulp.dest('./build'));
+});
+
+//Gulp task build
+gulp.task('builder', ['indexHaml', 'compass']);
+
 // configure which files to watch and what tasks to use on file changes
 gulp.task('watch', function() {
-    gulp.watch(config.src.scripts, ['jshint']);
+    //gulp.watch(config.src.scripts, ['jshint']);
+    gulp.watch('./app/templates/index.haml', ['indexHaml']);
     gulp.watch(config.src.styles, ['compass']);
 });
 
-
-gulp.watch(config.src.scripts, ['jshint']);
-gulp.watch(config.src.styles, ['compass']);
+gulp.task('default', ['builder', 'watch'], function() {
+    //return gutil.log('compass watch');
+    //gulp.start('compass');
+    //return gutil.log('Gulp is running!');
+    //gulp.start('watch');
+});
