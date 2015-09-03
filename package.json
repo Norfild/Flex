@@ -24,7 +24,10 @@
     "url": "https://github.com/Norfild/Flex.git"
   },
   "dependencies": {
+    "del": "^2.0.0",
     "express": "^4.13.3",
-    "gulp-haml": "^0.1.5"
+    "gulp-haml": "^0.1.5",
+    "gulp-jade": "^1.1.0",
+    "jade": "^1.11.0"
   }
 }

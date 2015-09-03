@@ -1,7 +1,9 @@
 var gulp  = require('gulp'),
     gutil = require('gulp-util'),
     jshint = require('gulp-jshint'),
+    del = require('del'),
     haml = require('gulp-haml'),
+    jade = require('gulp-jade'),
     compass = require('gulp-compass'),
     minifyCSS = require('gulp-minify-css');
 
@@ -29,7 +31,7 @@ var config = {
 };
 
 gulp.task('compass', function() {
-    gulp.src(config.src.styles)
+    return gulp.src(config.src.styles)
         .pipe(compass({
             style: 'compressed',
             css: 'app/css',
@@ -60,13 +62,24 @@ gulp.task('indexHaml', function() {
         .pipe(gulp.dest('./build'));
 });
 
+gulp.task('templates', function() {
+    return gulp.src('./app/templates/**/*.jade')
+        .pipe(jade())
+        .pipe(gulp.dest('./build/'))
+});
+
+//Cleaner
+gulp.task('clean', function(){
+    del.sync('./build/')
+});
+
 //Gulp task build
-gulp.task('builder', ['indexHaml', 'compass']);
+gulp.task('builder', ['clean', 'templates', 'compass']);
 
 // configure which files to watch and what tasks to use on file changes
 gulp.task('watch', function() {
     //gulp.watch(config.src.scripts, ['jshint']);
-    gulp.watch('./app/templates/index.haml', ['indexHaml']);
+    gulp.watch('./app/templates/**/*.jade', ['templates']);
     gulp.watch(config.src.styles, ['compass']);
 });
 
