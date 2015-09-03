@@ -2,7 +2,12 @@ var express = require('express'),
     app = express(),
     path = require('path');
 
-var indexPath = path.resolve(__dirname, 'build/index.html');
+var indexPath = path.resolve(__dirname, 'build/index.html'),
+    vendorsPath = path.resolve(__dirname, 'vendors'),
+    scriptsPath = path.resolve(__dirname, 'build/javascript');
+
+app.use(express.static(vendorsPath));
+app.use(express.static(scriptsPath));
 
 //base route
 app.get('*', function(req, res){
@@ -10,5 +15,5 @@ app.get('*', function(req, res){
 });
 
 var server = app.listen(3050, function(){
-   console.log('server started');
+   console.log('Server started');
 });
