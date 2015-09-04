@@ -60,14 +60,6 @@ gulp.task('jshint', function() {
         .pipe(jshint.reporter('jshint-stylish'));
 });
 
-
-//Gulp task build
-gulp.task('indexHaml', function() {
-    gulp.src('./app/templates/index.haml')
-        .pipe(haml())
-        .pipe(gulp.dest('./build'));
-});
-
 gulp.task('templates', function() {
     return gulp.src('./app/templates/**/*.jade')
         .pipe(jade())

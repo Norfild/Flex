@@ -1,4 +1,1 @@
-<!DOCTYPE html><html lang="en"><head><title></title><script src="/angular.min.js"></script><script src="/angular-resource.min.js"></script><script src="/app.js"></script></head><body><h1>Jade - node template engine</h1><div id="container" class="col"><p>Get on it!</p><p>Jade is a terse and simple
-templating language with a
-strong focus on performance
-and powerful features.</p></div></body></html>
+<!DOCTYPE html><html lang="en" ng-app="myApp"><head><base href="/"><title></title><script src="/angular.min.js"></script><script src="/angular-resource.min.js"></script><script src="/angular-ui-router.min.js"></script><script src="/app.js"></script></head><body ng-controller="myTestApp"><ul><li ng-repeat="item in list"><p>{{item.a}}</p><p>{{item.b}}</p></li><li>1+2={{1+2}}</li></ul><a ui-sref="hello">Go to page hello</a><div ui-view></div><!--h1 {{hello}}--><!--#container.col--><!--    p.--><!--        Jade is a terse and simple--><!--        templating language with a--><!--        strong focus on performance--><!--        and powerful features.--><!----><!--    p 1+2={{1+2}}--><!----><!--    a(href="#next", title="NexPage") NextPage--></body></html>

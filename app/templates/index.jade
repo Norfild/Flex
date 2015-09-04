@@ -1,19 +1,39 @@
 doctype html
-html(lang="en")
+html(lang="en", ng-app="myApp")
     head
+        base(href="/")
         title= pageTitle
+
         script(src='/angular.min.js')
         script(src='/angular-resource.min.js')
+        script(src='/angular-ui-router.min.js')
         script(src='/app.js')
-    body
-        h1 Jade - node template engine
-        #container.col
-            if youAreUsingJade
-                p You are amazing
-            else
-                p Get on it!
-            p.
-                Jade is a terse and simple
-                templating language with a
-                strong focus on performance
-                and powerful features.
+
+    body(ng-controller="myTestApp")
+
+        ul
+            li(ng-repeat="item in list")
+                p {{item.a}}
+                p {{item.b}}
+
+            li 1+2={{1+2}}
+
+
+        a(ui-sref="hello") Go to page hello
+
+        div(ui-view)
+
+
+
+
+        //h1 {{hello}}
+        //#container.col
+        //    p.
+        //        Jade is a terse and simple
+        //        templating language with a
+        //        strong focus on performance
+        //        and powerful features.
+        //
+        //    p 1+2={{1+2}}
+        //
+        //    a(href="#next", title="NexPage") NextPage
