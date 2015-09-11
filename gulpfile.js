@@ -1,48 +1,50 @@
-var gulp  = require('gulp'),
-    gutil = require('gulp-util'),
-    nodemon = require('nodemon'),
-    jshint = require('gulp-jshint'),
-    del = require('del'),
-    haml = require('gulp-haml'),
-    jade = require('gulp-jade'),
-    compass = require('gulp-compass'),
+var gulp      = require('gulp'),
+    gutil     = require('gulp-util'),
+    nodemon   = require('nodemon'),
+    jshint    = require('gulp-jshint'),
+    del       = require('del'),
+    jade      = require('gulp-jade'),
+    compass   = require('gulp-compass'),
     minifyCSS = require('gulp-minify-css');
+
+
 
 // Main configuration
 var config = {
 
-    //host:               'flex.dev',
-    //indexFile:          'index.html',
-
-    appFolder:          'app',
-    buildFolder:         'build',
+    host:          'flex.dev',
+    port:          '3050',
+    appFolder:     'app',
+    buildFolder:   'build',
 
     src: {
-        styles:         './app/stylesheets/*.sass',
-        scripts:        ['./app/scripts/**/*.js'],
-        resourcesToMove: [
-            './app/images/**/*.*',
-            './app/fonts/**/*.*',
-            './app/vendors/**/*.js'
-        ]
+        styles:    './app/stylesheets/*.sass',
+        scripts:   './app/scripts/**/*.js',
+        templates: './app/templates/**/*.jade'
     },
+
     dest: {
-        styles: './build/stylesheets/'
+        build:     './build/',
+        styles:    './build/stylesheets/',
+        scripts:   './build/javascript'
     }
+
 };
 
-// configure the jshint task
+
+
+// Configure the jshint task
 gulp.task('server', function() {
-    nodemon({'script' : './index.js' })
+    nodemon({'script' : './index.js' });
 });
 
 gulp.task('compass', function() {
     return gulp.src(config.src.styles)
         .pipe(compass({
             style: 'compressed',
-            css: 'app/css',
-            sass: 'app/stylesheets',
-            image: 'app/assets/images'
+            css:   'app/css',
+            sass:  'app/stylesheets',
+            image: 'app/images'
         }))
         .on('error', function(error) {
             // Would like to catch the error here
@@ -50,10 +52,10 @@ gulp.task('compass', function() {
             this.emit('end');
         })
         .pipe(minifyCSS())
-        .pipe(gulp.dest('build/css'));
+        .pipe(gulp.dest(config.dest.styles));
 });
 
-// configure the jshint task
+// Configure the jshint task
 gulp.task('jshint', function() {
     return gulp.src(config.src.scripts)
         .pipe(jshint())
@@ -61,35 +63,34 @@ gulp.task('jshint', function() {
 });
 
 gulp.task('templates', function() {
-    return gulp.src('./app/templates/**/*.jade')
+    return gulp.src(config.src.templates)
         .pipe(jade())
-        .pipe(gulp.dest('./build/'))
+        .pipe(gulp.dest(config.dest.build))
 });
 
 gulp.task('scripts', function(){
-    return gulp.src('./app/scripts/**/*.js')
-        .pipe(gulp.dest('./build/javascript'))
+    return gulp.src(config.src.scripts)
+        .pipe(gulp.dest(config.dest.scripts))
 });
 
-//Cleaner
+// Cleaner
 gulp.task('clean', function(){
     del.sync('./build/')
 });
 
-//Gulp task build
+// Gulp task build
 gulp.task('builder', ['clean', 'templates', 'scripts', 'compass']);
 
-// configure which files to watch and what tasks to use on file changes
+// Configure which files to watch and what tasks to use on file changes
 gulp.task('watch', function() {
-    //gulp.watch(config.src.scripts, ['jshint']);
-    gulp.watch('./app/scripts/**/*.js', ['scripts']);
-    gulp.watch('./app/templates/**/*.jade', ['templates']);
-    gulp.watch(config.src.styles, ['compass']);
+    gulp.watch(config.src.scripts,   ['scripts']);
+    gulp.watch(config.src.templates, ['templates']);
+    gulp.watch(config.src.styles,    ['compass']);
 });
 
 gulp.task('default', ['builder', 'watch'], function() {
     //return gutil.log('compass watch');
     gulp.start('server');
-    //return gutil.log('Gulp is running!');
+    return gutil.log('http://localhost:3050/');
     //gulp.start('watch');
 });
