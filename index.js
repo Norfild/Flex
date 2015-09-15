@@ -17,5 +17,5 @@ app.get('*', function(req, res){
 });
 
 var server = app.listen(3050, function(){
-   console.log('Server started');
+   console.log('Server started http://localhost:3050/');
 });

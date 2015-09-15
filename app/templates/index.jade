@@ -4,25 +4,33 @@ html(lang="en", ng-app="myApp")
         base(href="/")
         title= pageTitle
 
+        link(href='stylesheets/init.css', type='text/css', rel='stylesheet')
         script(src='/angular.min.js')
         script(src='/angular-resource.min.js')
+        script(src='/angular-cookies.min.js')
         script(src='/angular-ui-router.min.js')
         script(src='/app.js')
 
     body(ng-controller="myTestApp")
 
-        ul
-            li(ng-repeat="item in list")
-                p {{item.a}}
-                p {{item.b}}
+        //ul
+        //    li(ng-repeat="item in list")
+        //        p {{item.a}}
+        //        p {{item.b}}
+        //
+        //    li 1+2={{1+2}}
 
-            li 1+2={{1+2}}
+        header.header-app Test APP
 
+        nav.nav-menu
+            a.item-menu(ui-sref="hello")
+                | Go to page hello
+            a.item-menu(ui-sref="simple-form")
+                | Go to Simple Form
+            a.item-menu(ui-sref="login")
+                | Go to page login
 
-        a(ui-sref="hello") Go to page hello
-
-        div(ui-view)
-
+        .container-app(ui-view)
 
 
 

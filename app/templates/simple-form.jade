@@ -1,0 +1,41 @@
+
+
+.login(ng-controller="LoginController")
+
+    form(
+        role="form"
+        ng-submit="Login()"
+        name="loginForm")
+
+        .title Login
+
+        .item-form
+            input.elem-form(
+                ng-model='user.name',
+                type='text',
+                placeholder='Name',
+                autofocus,
+                required)
+
+        .item-form
+            input.elem-form(
+                ng-model='user.email',
+                type='email',
+                placeholder='Email',
+                required)
+
+        .item-form
+            textarea.elem-form(
+                ng-model='user.text',
+                placeholder='text')
+
+        hr
+
+        p username = "{{user.name}}"
+        p userdata = "{{user.pass}}"
+
+        hr
+
+        .title JSON
+
+        p {{user | json}}

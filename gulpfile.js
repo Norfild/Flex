@@ -91,6 +91,5 @@ gulp.task('watch', function() {
 gulp.task('default', ['builder', 'watch'], function() {
     //return gutil.log('compass watch');
     gulp.start('server');
-    return gutil.log('http://localhost:3050/');
     //gulp.start('watch');
 });

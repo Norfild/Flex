@@ -1,4 +1,1 @@
-body {
-  background: #ccc;
-  margin: 10px;
-  padding: 10px; }
+body{margin:0;padding:0;font-size:13px;font-weight:normal;font-family:Arial,Helvetica,sans-serif;line-height:20px}.header-app{padding:20px;border-bottom:1px solid #ddd;font-size:20px}.container-app{padding:20px}.nav-menu{display:inline-block;width:100%;padding:0;margin:0;border-bottom:1px solid #ddd}.nav-menu .item-menu{float:left;margin:0;padding:10px 20px}.nav-menu .item-menu:hover{background:#f1f1f1}.elem-form{padding:10px}.ng-invalid.ng-touched{border:1px solid #fa787e}.button-primary{border:1px solid #5bc0de;padding:10px;background:#5bc0de;color:#fff;font-size:14px;text-align:center}.login .title{font-size:18px;margin:0 0 15px}.login .elem-form{width:300px;border:1px solid #ccc}.login .item-form{margin:0 0 15px}.login .button-primary{width:160px}
