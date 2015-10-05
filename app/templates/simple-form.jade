@@ -1,11 +1,8 @@
 
 
-.login(ng-controller="LoginController")
+.login(ng-controller="SimpleFormController")
 
-    form(
-        role="form"
-        ng-submit="Login()"
-        name="loginForm")
+    form(novalidate)
 
         .title Login
 
@@ -15,7 +12,8 @@
                 type='text',
                 placeholder='Name',
                 autofocus,
-                required)
+                required,
+                tooltip="On the Left!")
 
         .item-form
             input.elem-form(
@@ -29,13 +27,20 @@
                 ng-model='user.text',
                 placeholder='text')
 
-        hr
+        button.button-primary(ng-click='reset(user)')
+            | Reset
 
-        p username = "{{user.name}}"
-        p userdata = "{{user.pass}}"
+
+
+        button.button-primary(
+            ng-click='update()',
+            type='submit')
+            | Save
 
         hr
 
         .title JSON
 
-        p {{user | json}}
+        pre user   = "{{user | json}}"
+        pre master = "{{master | json}}"
+

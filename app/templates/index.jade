@@ -9,6 +9,7 @@ html(lang="en", ng-app="myApp")
         script(src='/angular-resource.min.js')
         script(src='/angular-cookies.min.js')
         script(src='/angular-ui-router.min.js')
+        script(src='/ui-bootstrap.min.js')
         script(src='/app.js')
 
     body(ng-controller="myTestApp")
@@ -22,13 +23,18 @@ html(lang="en", ng-app="myApp")
 
         header.header-app Test APP
 
+        nav.navbar.navbar-inverse.navbar-static-top
+            a.navbar-brand Project name
+
         nav.nav-menu
             a.item-menu(ui-sref="hello")
                 | Go to page hello
             a.item-menu(ui-sref="simple-form")
                 | Go to Simple Form
             a.item-menu(ui-sref="login")
-                | Go to page login
+                | Login
+            a.item-menu(ui-sref="registration")
+                | Registration
 
         .container-app(ui-view)
 

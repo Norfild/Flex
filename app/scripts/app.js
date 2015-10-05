@@ -6,7 +6,8 @@
     var app = angular.module('myApp', [
         'ui.router',
         'ngCookies',
-        'ngResource'
+        'ngResource',
+        'ui.bootstrap'
     ]);
 
     app.config(function($stateProvider, $urlRouterProvider){
@@ -24,6 +25,12 @@
                 controller:  'LoginController'
             })
 
+            .state('registration', {
+                url:         '/registration',
+                templateUrl: '/registration.html',
+                controller:  'RegistrationController'
+            })
+
             .state('hello', {
                 url:         '/hello',
                 templateUrl: '/hello.html',
@@ -31,6 +38,9 @@
             });
 
     })
+
+
+
 
     .factory('AuthenticationService', ['Base64', '$http', '$cookieStore', '$rootScope', '$timeout', function (Base64, $http, $cookieStore, $rootScope, $timeout) {
 
@@ -187,7 +197,20 @@
 
     app.controller('SimpleFormController', ['$scope', function($scope) {
 
-        $scope.user = {};
+        $scope.master = {};
+
+        $scope.update = function(user) {
+
+            console.log(user);
+
+            $scope.master = angular.copy(user);
+        };
+
+        $scope.reset = function() {
+            $scope.user = angular.copy($scope.master);
+        };
+
+        $scope.reset();
 
     }]);
 
